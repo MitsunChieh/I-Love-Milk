@@ -1,0 +1,67 @@
+  <div class="wrapper">
+    <div class="header" id="top">
+      <div class="contentwidth">
+          <h1>鮮乳房</h1>
+          <p>第一手的鮮奶<br>酪農品牌鮮奶直送</p>
+      </div>
+          <a href="javascript:;">向下捲動</a>
+    </div>
+    <div class="direct_to">
+      <div class="contentwidth">
+        <h2>鮮奶直送</h2>
+        <p>是不敢喝牛奶，還是不知道怎麼挑牛奶？</p>
+        <p>我們給您最單純最簡單的選擇</p>
+      </div>
+    </div>
+    <div class="order">
+      <div class="contentwidth">
+        <h2>每週固定配送</h2>
+        <p>想要新鮮，不再需要到超市排隊。</p>
+      </div>
+    </div>
+    <div class="brand">
+      <div class="contentwidth">
+        <h2>酪農自有品牌</h2>
+        <p>您終於有方便的管道可以買到小農品牌的優質鮮奶</p>
+        <p>因為了解，所以放心</p>
+      </div>
+    </div>
+    <div class="fresh">
+      <div class="contentwidth">
+        <h2>保證無添加</h2>
+        <p>給自己一個，與牧場新鮮的牛奶直接對話的機會</p>
+        <p>鮮奶的『鮮』，來自於牧場的味道</p>
+      </div>
+    </div>
+    <div class="me">
+      <div class="contentwidth">
+        <div class="vet">
+          <h3>我是<strong>阿嘉</strong></h3>
+          <p>一位在全台灣牧場出診的大動物獸醫師，<br>每天在全台各地牧場出診，保護著乳牛的健康。<br>能夠與每一位酪農戶直接接觸，<br>是為什麼我敢大聲推薦的原因，<br>想給酪農與消費者一個直接接觸的管道，<br>讓你體會最純粹，自然的鮮奶品味。</p>
+        </div>
+        <div class="aga"></div>
+      </div>
+    </div>
+    <div class="cow">
+      <div class="contentwidth"></div>
+    </div>
+    <div class="footer">
+      <div class="contentwidth">
+        <div class="tell_us" id="form">
+          <h4>追蹤「鮮乳房」的後續消息</h4><br>
+          <%= form_for @ta, url: landingpages_path(anchor: :form) do |f| %>
+            <p class="success"><%= flash[:success] %></p>
+            <p class="fail"><%= flash[:fail] %></p>
+            <%= f.label :name, "*該怎麼稱呼您？(暱稱/姓名)" %><br>
+            <%= f.text_field :name %>
+            <%= f.radio_button :gender, "female" %>小姐
+            <%= f.radio_button :gender, "male" %>先生<br><br>
+            <%= f.label :email, "*請輸入您常用的電子郵件信箱：" %><br>
+            <%= f.email_field :email %><br><br>
+            <%= f.submit "送出", :class => "submit" %>
+          <% end %>
+        </div>
+        <a href="#top" class="to_top">回頁首</a>
+      </div>
+    </div>
+  </div>
