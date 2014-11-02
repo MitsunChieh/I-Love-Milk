@@ -49,7 +49,7 @@
       <div class="contentwidth">
         <div class="tell_us" id="form">
           <h4>追蹤「鮮乳房」的後續消息</h4><br>
-          <%= form_for @ta, url: landingpages_path(anchor: :form) do |f| %>
+          <%= form_for @ta, url: landingpages_path(anchor: "form") do |f| %>
             <p class="success"><%= flash[:success] %></p>
             <p class="fail"><%= flash[:fail] %></p>
             <%= f.label :name, "*該怎麼稱呼您？(暱稱/姓名)" %><br>
