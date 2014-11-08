@@ -58,7 +58,7 @@
             <%= f.radio_button :gender, "male" %>先生<br><br>
             <%= f.label :email, "*請輸入您常用的電子郵件信箱：" %><br>
             <%= f.email_field :email %><br><br>
-            <%= f.submit "送出", :class => "submit", :onClick => "_gaq.push(['_trackEvent', 'landing page ', 'send', 'interested ppl'])" %>
+            <%= f.submit "送出", :class => "submit", :onClick => "_gaq.push(['_trackEvent', 'signup', 'click']);" %>
           <% end %>
         </div>
         <a href="#top" class="to_top">回頁首</a>
