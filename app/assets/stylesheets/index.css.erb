@@ -43,10 +43,15 @@
   }
 
 
-  html, body{ height: 100%; }
-  h2{ font-size: 150px; margin-bottom: 10px;}
-  h3{ font-size: 80px; margin-bottom: 10px;}
-  h4{ font-size: 40px; }
+  html, body{
+    height: 100%;
+    font-family: "Comic Sans MS", "Indie Flower", "微軟正黑體";
+    /*font-family: "微軟正黑體";*/
+  }
+  h2{ font-size: 100px; margin-bottom: 18px;}
+  h3{ font-size: 80px; margin-bottom: 18px;}
+  h4{ font-size: 40px; margin-bottom: 8px;}
+  p{ margin-bottom: 12px; }
   .wrapper{
     height: 100%;
     width: 100%;
@@ -73,7 +78,7 @@
     vertical-align: middle;
   }
   .header h1{
-    font-size: 250px;
+    font-size: 200px;
     text-shadow: 1px 1px 2px #fff,
                  2px 2px 2px #ddd,
                  3px 3px 2px #bbb,
@@ -88,6 +93,7 @@
     font-size: 26px;
     text-shadow: 3px 3px #666;
     line-height: 30px;
+    margin-bottom: 5px;
   }
   .header a{
     color: #fff;
@@ -174,6 +180,7 @@
   .order{
     height: 500px;
     background-color: #000;
+    /*background-color: #40b9ff;*/
     color: #fff;
   }
   .order:before{
@@ -246,33 +253,35 @@
     position: absolute;
     top: 50%;
     right: 50%;
-    margin-top: -112px;
-    margin-right: -402px
+    margin-top: -120px;
+    margin-right: -470px
   }
   .me p{
     font-size: 24px;
+    margin-bottom: 5px;
   }
   .me .aga{
     width: 300px;
     height: 300px;
-    background: url('<%= asset_path("AGa.jpg") %>');
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: 50% 20%;
+    background: url('<%= asset_path("AGa.png") %>');
+    /*-webkit-background-size: cover;*/
+    /*background-size: cover;*/
+    /*background-position: 50% 20%;*/
     float: left;
     position: absolute;
     top: 50%;
     margin-top: -150px;
+    margin-left: 50px;
     border-radius: 150px 150px;
   }
   .cow{
     height: 500px;
     background-color: #000;
 
-    background: url('<%= asset_path("cow2.jpg") %>');
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: 0 -80px;
+    background: url('<%= asset_path("cow2.png") %>');
+    /*-webkit-background-size: cover;*/
+    /*background-size: cover;*/
+    /*background-position: 0 -80px;*/
   }
   .footer{
     background: url('<%= asset_path("cow_pattern.jpg") %>');
@@ -301,6 +310,10 @@
     line-height: 20px;
     margin-left: 30px;
   }
+  .footer p{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
   .footer .field_with_errors{
     display: inline-block;
   }
@@ -309,10 +322,8 @@
     color: #f00;
     margin-bottom: 5px;
   }
-  .footer .success{
-    font-size: 26px;
-    color: green;
-    margin-bottom: 5px;
+  .footer .new_interested_person{
+    font-size: 20px;
   }
   .footer form .submit{
     margin-left: 350px;
@@ -373,4 +384,46 @@
     left: 50%;
     margin-left: -7px;
     top: 39px;
+  }
+  .success{
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+    display: inline-block;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    text-align: center;
+    cursor: default;
+    border: 15px solid transparent;
+    border-radius: 20px;
+    background-color: #333;
+    font-size: 26px;
+    color: #fff;
+    margin-top: 30px;
+  }
+  .success a{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #ff7f32;
+    border-color: #ff6f18;
+    font-size: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .success a:hover,
+  .success a:focus,
+  .success a:active{
+  color: #f9f8f3;
+  background-color: #ff6609;
+  border-color: #da5200;
   }

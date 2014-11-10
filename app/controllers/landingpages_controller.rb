@@ -7,8 +7,7 @@ class LandingpagesController < ApplicationController
   def create
     @ta = InterestedPerson.new(ta_params)
     if @ta.save
-      flash[:success] = "填寫成功！"
-      redirect_to root_url( anchor: "form" )
+      redirect_to success_index_path
     else
       flash[:fail] = "暱稱與信箱為必填"
       render :index

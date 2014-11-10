@@ -1,8 +1,9 @@
   <div class="wrapper">
     <div class="header" id="top">
       <div class="contentwidth">
-          <h1>鮮乳房</h1>
-          <p>第一手的鮮奶<br>酪農品牌鮮奶直送</p>
+          <h1>鮮乳坊</h1>
+          <p>第一手的鮮奶</p>
+          <p>酪農品牌鮮奶直送</p>
       </div>
           <a href="javascript:;">向下捲動</a>
     </div>
@@ -37,7 +38,11 @@
       <div class="contentwidth">
         <div class="vet">
           <h3>我是<strong>阿嘉</strong></h3>
-          <p>一位在全台灣牧場出診的大動物獸醫師，<br>每天在全台各地牧場出診，保護著乳牛的健康。<br>能夠與每一位酪農戶直接接觸，<br>是為什麼我敢大聲推薦的原因，<br>想給酪農與消費者一個直接接觸的管道，<br>讓你體會最純粹，自然的鮮奶品味。</p>
+          <p>一位全台灣趴趴走的大動物獸醫師，</p>
+          <p>每天在全台10個不同縣市的牧場出診，</p>
+          <p>守護著30個牧場，超過6000頭乳牛的健康，</p>
+          <p>與每一位酪農戶直接接觸，所以我敢大聲推薦！</p>
+          <p>搭起消費者和酪農的橋樑，體會最自然的鮮奶風味。</p>
         </div>
         <div class="aga"></div>
       </div>
@@ -48,9 +53,9 @@
     <div class="footer">
       <div class="contentwidth">
         <div class="tell_us" id="form">
-          <h4>追蹤「鮮乳房」的後續消息</h4><br>
-          <%= form_for @ta, url: landingpages_path(anchor: "form") do |f| %>
-            <p class="success"><%= flash[:success] %></p>
+          <h4>追蹤「鮮乳坊」的後續消息</h4>
+          <p>留下您的電子郵件，讓我們寄送最新的消息給您。</p>
+          <%= form_for @ta, url: landingpages_path do |f| %>
             <p class="fail"><%= flash[:fail] %></p>
             <%= f.label :name, "*該怎麼稱呼您？(暱稱/姓名)" %><br>
             <%= f.text_field :name %>
