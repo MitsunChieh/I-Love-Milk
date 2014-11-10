@@ -7,11 +7,15 @@ class LandingpagesController < ApplicationController
   def create
     @ta = InterestedPerson.new(ta_params)
     if @ta.save
-      redirect_to success_index_path
+      redirect_to success_landingpages_path
     else
       flash[:fail] = "暱稱與信箱為必填"
       render :index
     end
+  end
+
+  def success
+
   end
 
   private
