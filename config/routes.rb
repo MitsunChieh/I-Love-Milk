@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root :to => "landingpages#index"
   resources :landingpages do
-    collection {get :success}
+    collection do
+      get :success
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
