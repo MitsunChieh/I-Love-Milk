@@ -7,6 +7,13 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'store', to: 'store#index'
+  namespace :store do
+    get 'products/:id', as: :product, to: 'products#show'
+
+    resources :shoppings
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

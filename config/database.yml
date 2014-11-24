@@ -1,10 +1,15 @@
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: milk_development
-  host: localhost
-  username: root
-  password:
+  # adapter: mysql2
+  # encoding: utf8
+  # database: milk_development
+  # host: localhost
+  # username: root
+  # password:
+
+  adapter: postgresql
+  encoding: unicode
+  # pool: 4
+  database: milk
 
 test:
   adapter: mysql2

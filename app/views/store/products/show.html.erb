@@ -1,0 +1,6 @@
+<%= @product.name %>
+
+<%= form_for @shopping, url: store_shoppings_path(p_id: @product.id) do |f| %>
+
+<%= f.submit '購買' %>
+<% end %>
