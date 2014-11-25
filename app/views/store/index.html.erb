@@ -2,6 +2,13 @@
 
 <ul>
 <% @products.each do |p| %>
-  <li><%= link_to p.name, store_product_path(p) %></li>
+  <br>
+  <li>
+    <p><%= p.name %>
+    價格：<%= p.price %>
+    剩餘數量：<%= p.qty %>
+    <%= link_to '前往商品頁', store_product_path(p) %>
+    <%= render 'common/cartupdate', p: p %></p>
+  </li>
 <% end %>
 </ul>

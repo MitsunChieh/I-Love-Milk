@@ -1,0 +1,10 @@
+<h1>購物車</h1>
+
+<ul>
+  <% @cart.each do |s| %>
+  <li>
+    <%= s.product.name %>
+    *<%= s.qty %>
+  </li>
+  <% end %>
+</ul>

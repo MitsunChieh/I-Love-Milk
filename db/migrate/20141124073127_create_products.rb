@@ -3,6 +3,8 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name, null: false, default: ""
       t.text :desciption
+      t.integer :qty
+      t.integer :price
 
       t.timestamps
 

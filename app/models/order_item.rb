@@ -1,4 +1,4 @@
-class Shopping < ActiveRecord::Base
+class OrderItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
 end

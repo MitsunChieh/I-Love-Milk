@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124110657) do
+ActiveRecord::Schema.define(version: 20141125082039) do
+
+  create_table "cart_items", force: true do |t|
+    t.integer  "cart_id"
+    t.integer  "product_id"
+    t.integer  "qty",        default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "interested_people", force: true do |t|
     t.string   "name",       default: "", null: false
@@ -21,9 +34,19 @@ ActiveRecord::Schema.define(version: 20141124110657) do
     t.datetime "updated_at"
   end
 
+  create_table "order_items", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "qty",        default: 0, null: false
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "orders", force: true do |t|
     t.integer  "user_id"
-    t.string   "status"
+    t.integer  "total_price"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,21 +54,14 @@ ActiveRecord::Schema.define(version: 20141124110657) do
   create_table "products", force: true do |t|
     t.string   "name",                  default: "", null: false
     t.text     "desciption"
+    t.integer  "qty"
+    t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "logo_url_file_name"
     t.string   "logo_url_content_type"
     t.integer  "logo_url_file_size"
     t.datetime "logo_url_updated_at"
-  end
-
-  create_table "shoppings", force: true do |t|
-    t.integer  "order_id"
-    t.integer  "product_id"
-    t.integer  "quantity"
-    t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

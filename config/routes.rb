@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root :to => "landingpages#index"
-  resources :landingpages do
+  resource :landingpages do
     collection do
       get :success
     end
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   namespace :store do
     get 'products/:id', as: :product, to: 'products#show'
 
-    resources :shoppings
+    resources :carts
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
