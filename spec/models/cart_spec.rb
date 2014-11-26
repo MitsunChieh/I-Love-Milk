@@ -1,5 +1,51 @@
 require 'rails_helper'
 
 RSpec.describe Cart, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before do
+    p1 = Product.create(id: 1, name: 'AAA', qty: 1, price: 100)
+  end
+
+  let(:p1){Product.create(id: 1, name: 'AAA', qty: 1, price: 100)}
+  let(:p2){Product.new(id: 2, name: 'BBB', qty: 2, price: 200)}
+  let(:p3){{id: 3, name: 'CCC', qty: 3, price: 300}}
+  let(:cart){Cart.create}
+
+  describe "Add products to cart" do
+
+    it "Products not enough" do
+      expect(cart.can_add_product?(1, 2)).to eq(false)
+    end
+
+    it "Products enough" do
+      expect(cart.can_add_product?(1, 1)).to eq(true)
+    end
+
+    it "Same product in cart" do
+
+    end
+
+    it "add one product into cart" do
+    end
+
+    it "add two products into cart" do
+    end
+
+  end
+
+
+  # def add_cartItem(p_id, qty)
+  #   CartItem.create(   cart_id: self.id,
+  #                   product_id: p_id,
+  #                          qty: qty)
+  # end
+
+  # def can_add_product?(p_id, qty)
+  #   Product.find(p_id).qty >= qty
+  # end
+
+  # def same_product_in_cart?
+
+  # end
+
 end

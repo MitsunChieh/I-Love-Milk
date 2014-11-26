@@ -1,10 +1,29 @@
 <h1>購物車</h1>
+<br>
+<table width="300px">
+  <tr>
+    <th>產品名稱</th>
+    <th>單價</th>
+    <th>數量</th>
+    <th>總價</th>
+  </tr>
 
-<ul>
-  <% @cart.each do |s| %>
-  <li>
-    <%= s.product.name %>
-    *<%= s.qty %>
-  </li>
+  <% @cart.cart_items.each do |i| %>
+    <tr>
+      <td><%= i.product.name %></td>
+      <td><%= i.product.price %></td>
+      <td><%= i.qty %></td>
+      <td><%= i.product.price*i.qty %></td>
+    </tr>
   <% end %>
-</ul>
+
+  <tr>
+    <td></td>
+    <td></td>
+    <td>總金額</td>
+    <td><%= @cart.total_price %></td>
+  </tr>
+
+</table>
+
+<%= link_to '回商品列表', store_path %>
