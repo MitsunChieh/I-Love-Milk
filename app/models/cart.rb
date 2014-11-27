@@ -5,7 +5,7 @@ class Cart < ActiveRecord::Base
     Product.find(p_id).qty >= qty
   end
 
-  def add_cartItem(p_id, qty)
+  def add_cartItem(p_id, price, qty)
     unless same_product_in_cart?(p_id)
       CartItem.create(   cart_id: self.id,
                       product_id: p_id,
@@ -15,9 +15,15 @@ class Cart < ActiveRecord::Base
       cartItem.qty +=qty
       cartItem.save
     end
+    self.amount += price*qty
+    self.save
   end
 
-  def total_price
+  def remove_cartItem(p_id)
+    i = find_cartItem(p_id)
+    self.amount -= i.product.price*i.qty
+    self.save
+    i.destroy
   end
 
   private

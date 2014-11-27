@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141125082039) do
   end
 
   create_table "carts", force: true do |t|
+    t.integer  "amount",     default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,21 +9,22 @@
   </tr>
 
   <% @cart.cart_items.each do |i| %>
-    <tr>
+    <tr id="product_<%= i.product_id %>">
       <td><%= i.product.name %></td>
       <td><%= i.product.price %></td>
       <td><%= i.qty %></td>
       <td><%= i.product.price*i.qty %></td>
+      <td><%= link_to '刪除', store_cart_path(p_id: i.product_id), method: :delete, remote: :true %></td>
     </tr>
   <% end %>
 
   <tr>
     <td></td>
     <td></td>
-    <td>總金額</td>
-    <td><%= @cart.total_price %></td>
+    <td>結帳金額：</td>
+    <td id="cart-amount"><%= @cart.amount %></td>
   </tr>
-
 </table>
 
+<%= link_to '結帳', store_orders_path(cart_id: @cart.id), method: :post %>
 <%= link_to '回商品列表', store_path %>

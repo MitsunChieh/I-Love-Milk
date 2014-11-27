@@ -11,6 +11,13 @@ group :test, :development do
   gem "rspec-rails"
 end
 
+group :development do
+  gem "better_errors"
+end
+
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record

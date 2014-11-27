@@ -11,12 +11,13 @@ Rails.application.routes.draw do
   namespace :store do
     get 'products/:id', as: :product, to: 'products#show'
 
-    resources :carts
+    resource :cart
+    resources :orders
   end
 
   namespace :admin do
     get :packages, to: 'packages#index'
-    get :export, to: 'packages#export'
+    # get :export, to: 'packages#export'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -2,14 +2,19 @@ require 'rails_helper'
 
 RSpec.describe Cart, :type => :model do
 
-  before do
-    p1 = Product.create(id: 1, name: 'AAA', qty: 1, price: 100)
-  end
+  # before do
+  #   p1 = Product.create(id: 1, name: 'AAA', qty: 1, price: 100)
+  # end
 
-  let(:p1){Product.create(id: 1, name: 'AAA', qty: 1, price: 100)}
-  let(:p2){Product.new(id: 2, name: 'BBB', qty: 2, price: 200)}
-  let(:p3){{id: 3, name: 'CCC', qty: 3, price: 300}}
-  let(:cart){Cart.create}
+  let(:cart){Cart.create!}
+
+  let(:p1){ Product.create!(id: 1, name: "AAA", qty: 1, price: 100) }
+  let(:p2){ Product.create!(name: "BBB", qty: 2, price: 200) }
+  let(:p3){ Product.create!(name: "CCC", qty: 3, price: 300) }
+
+  it "should be empty cart" do
+    expect(cart.cart_items).to eq([])
+  end
 
   describe "Add products to cart" do
 
