@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     post "login" => "auth#login"
     post "logout" => "auth#logout"
 
-    resources :products, only: [:index]
+    resources :products, only: [:index, :show]
     resources :orders, only: [:index]
   end
 
