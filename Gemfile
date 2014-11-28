@@ -1,13 +1,20 @@
 source 'https://rubygems.org'
 
 
+group :development do
+  gem "better_errors"
+end
+
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'mysql2'
 # for heroku
-gem 'pg'
+
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
