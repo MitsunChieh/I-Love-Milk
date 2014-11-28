@@ -1,63 +1,60 @@
 [{
 
-  "order": [{
+  "id": 432,
+  "item": [{
 
-    "id": 1,
-    "item": [{
-
-      "product_id": 1,
-      "qty": 3,
-      "price": 140
-
-    },
-    {
-
-      "product_id": 3,
-      "qty": 2,
-      "price": 200
-
-    },
-    {
-
-      "product_id": 2,
-      "qty": 5,
-      "price": 100
-
-    }],
-    "amount": 1320,
-    "address": "台北市中山南路1號",
-    "status": "paid",
-    "delivery": "2014-11-28"
+    "product_id": 1,
+    "qty": 3,
+    "price": 140
 
   },
   {
 
-    "id": 2,
-    "item": [{
+    "product_id": 3,
+    "qty": 2,
+    "price": 200
 
-      "product_id": 3,
-      "qty": 3,
-      "price": 200
+  },
+  {
 
-    },
-    {
+    "product_id": 2,
+    "qty": 5,
+    "price": 100
 
-      "product_id": 1,
-      "qty": 5,
-      "price": 140
+  }],
+  "amount": 1320,
+  "address": "台北市中山南路1號",
+  "status": "paid",
+  "delivery": "2014-11-28"
 
-    },
-    {
+},
+{
 
-      "product_id": 4,
-      "qty": 1,
-      "price": 300
+  "id": 516,
+  "item": [{
 
-    }],
-    "amount": 1600,
-    "address": "台北市徐州路2號",
-    "status": "unpaid",
-    "delivery": ""
+    "product_id": 3,
+    "qty": 3,
+    "price": 200
 
-  }]
+  },
+  {
+
+    "product_id": 1,
+    "qty": 5,
+    "price": 140
+
+  },
+  {
+
+    "product_id": 4,
+    "qty": 1,
+    "price": 300
+
+  }],
+  "amount": 1600,
+  "address": "台北市徐州路2號",
+  "status": "unpaid",
+  "delivery": ""
+
 }]
