@@ -1,0 +1,16 @@
+<h1>鮮乳坊</h1>
+<br>
+<%= link_to '前往購物車', store_cart_path %>
+<p>商品列表</p>
+<ul>
+<% @products.each do |p| %>
+  <br>
+  <li>
+    <p><%= p.name %>
+    價格：<%= p.price %>
+    剩餘數量：<%= p.qty %>
+    <%= link_to '前往商品頁', store_product_path(p) %>
+    <%= render 'common/cartupdate', p: p%></p>
+  </li>
+<% end %>
+</ul>

@@ -1,10 +1,34 @@
 Rails.application.routes.draw do
 
   root :to => "landingpages#index"
-  resources :landingpages do
+  resource :landingpages do
     collection do
       get :success
     end
+  end
+
+  get 'store', to: 'store#index'
+  namespace :store do
+    get 'products/:id', as: :product, to: 'products#show'
+
+    resource :cart
+    resources :orders
+  end
+
+  unless Rails.env.production?
+    namespace :admin do
+      get :packages, to: 'packages#index'
+      # get :export, to: 'packages#export'
+    end
+  end
+
+  scope :path => '/api/v1/', :module => "api_v1",
+                             :defaults => { :format => :json }, :as => 'v1' do
+    post "login" => "auth#login"
+    post "logout" => "auth#logout"
+
+    resources :products, only: [:index]
+    resources :orders, only: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

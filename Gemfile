@@ -1,5 +1,22 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+# gem 'faker'
+gem "kaminari"
+
+gem "paperclip"
+# Upload Image for logo
+
+group :test, :development do
+  gem "rspec-rails"
+end
+
+group :development do
+  gem "better_errors"
+end
+
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
 
 group :development do
   gem "better_errors"

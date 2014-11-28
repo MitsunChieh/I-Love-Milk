@@ -1,0 +1,39 @@
+User has_many order
+id
+name
+// address
+
+Product
+id
+name
+description
+qty
+price
+logo_url
+
+---------------
+
+Cart
+id
+// user_id
+
+CartItem
+id
+cart_id
+product_id
+qty
+
+----------------
+
+Order
+id
+user_id
+total_price
+address
+
+OrderItem
+id
+order_id
+product_id
+qty
+price

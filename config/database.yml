@@ -6,6 +6,11 @@ development:
   username: root
   password:
 
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: 4
+  # database: milk
+
 test:
   adapter: mysql2
   encoding: utf8

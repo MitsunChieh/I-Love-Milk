@@ -1,0 +1,31 @@
+<ul>
+  <% @order.each do |order| %>
+    <li>
+      <p>訂單編號<%= order.id %></p>
+      <table width="300px">
+        <tr>
+          <th>產品名稱</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
+        </tr>
+        <% order.order_items.each do |item| %>
+        <tr>
+          <td><%= item.product.name %></td>
+          <td><%= item.price %></td>
+          <td><%= item.qty %></td>
+          <td><%= item.price*item.qty %></td>
+        </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>結帳金額：</td>
+          <td><%= @cart.total_price %></td>
+        </tr>
+      </table>
+    </li>
+    <br>
+    <br>
+  <% end %>
+</ul>

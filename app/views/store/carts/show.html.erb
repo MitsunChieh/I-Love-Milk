@@ -1,0 +1,30 @@
+<h1>購物車</h1>
+<br>
+<table width="300px">
+  <tr>
+    <th>產品名稱</th>
+    <th>單價</th>
+    <th>數量</th>
+    <th>總價</th>
+  </tr>
+
+  <% @cart.cart_items.each do |i| %>
+    <tr id="product_<%= i.product_id %>">
+      <td><%= i.product.name %></td>
+      <td><%= i.product.price %></td>
+      <td><%= i.qty %></td>
+      <td><%= i.product.price*i.qty %></td>
+      <td><%= link_to '刪除', store_cart_path(p_id: i.product_id), method: :delete, remote: :true %></td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td></td>
+    <td></td>
+    <td>結帳金額：</td>
+    <td id="cart-amount"><%= @cart.amount %></td>
+  </tr>
+</table>
+
+<%= link_to '結帳', store_orders_path(cart_id: @cart.id), method: :post %>
+<%= link_to '回商品列表', store_path %>

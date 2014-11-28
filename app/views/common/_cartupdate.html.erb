@@ -1,0 +1,5 @@
+<%= form_for @cart_item, url: store_cart_path(p_id: p.id), remote: :true do |f| %>
+  <%= f.label :qty, '數量' %>
+  <%= f.text_field :qty, value: 1 %>
+  <%= f.submit '加入購物車'%>
+<% end %>
