@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141125082039) do
 
   create_table "carts", force: true do |t|
     t.integer  "amount",     default: 0, null: false
+    t.integer  "qty",        default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,7 +47,7 @@ ActiveRecord::Schema.define(version: 20141125082039) do
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
-    t.integer  "total_price"
+    t.integer  "amount",     default: 0, null: false
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -66,9 +67,16 @@ ActiveRecord::Schema.define(version: 20141125082039) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "email"
     t.string   "name"
+    t.string   "image"
+    t.string   "fb_uid"
+    t.string   "fb_token"
+    t.datetime "fb_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["fb_uid"], name: "index_users_on_fb_uid", using: :btree
 
 end

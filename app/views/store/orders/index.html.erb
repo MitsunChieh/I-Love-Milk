@@ -1,5 +1,10 @@
+<p>訂單列表</p>
+
+<%= link_to '回商品列表', store_path %>
+<%= paginate @orders %>
+<br>
 <ul>
-  <% @order.each do |order| %>
+  <% @orders.each do |order| %>
     <li>
       <p>訂單編號<%= order.id %></p>
       <table width="300px">
@@ -21,7 +26,7 @@
           <td></td>
           <td></td>
           <td>結帳金額：</td>
-          <td><%= @cart.total_price %></td>
+          <td><%= order.amount %></td>
         </tr>
       </table>
     </li>

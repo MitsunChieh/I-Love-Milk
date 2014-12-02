@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'devise'
+gem 'omniauth-facebook'
+
+# gem 'devise'
 # gem 'faker'
 gem "kaminari"
 

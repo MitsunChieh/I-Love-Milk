@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+
+  get '/auth/:provider/callback', :to => 'sessions#create'
+  get '/auth/failure', to: 'sessions#failure'
+  delete '/auth/signout', to: 'sessions#destroy'
+
   root :to => "landingpages#index"
   resource :landingpages do
     collection do

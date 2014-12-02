@@ -16,3 +16,5 @@
 /tmp
 /local-db
 latest.sql
+/config/facebook.yml
+/config/secrets.yml

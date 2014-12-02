@@ -1,18 +1,22 @@
 class Store::OrdersController < ApplicationController
 
   def index
-    @order = Order.page(params[:page]).per(5)
+    @orders = Order.page(params[:page]).per(5)
+  end
+
+  def new
+    @order = Order.new
   end
 
   def create
-    cart = Cart.find(params[:cart_id])
-    order = Order.create()
-    cart.cart_items.each do |i|
-      order.order_items.create(product_id: i.product_id,
-                                qty: i.qty,
-                                price: Product.find(i.product_id).price)
+    order = Order.create( :user_id => current_user.id,
+                          :address => params[:order][:address],
+                          :amount => current_cart.amount )
 
-    end
+    order.add_order_item(current_cart)
+
+    session[:cart_id] = nil
+    current_cart.destroy
 
     redirect_to store_orders_path
   end

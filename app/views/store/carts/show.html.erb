@@ -1,5 +1,3 @@
-<h1>購物車</h1>
-<br>
 <table width="300px">
   <tr>
     <th>產品名稱</th>
@@ -26,5 +24,5 @@
   </tr>
 </table>
 
-<%= link_to '結帳', store_orders_path(cart_id: @cart.id), method: :post %>
+<%= link_to '結帳', new_store_order_path(cart_id: @cart.id) %>
 <%= link_to '回商品列表', store_path %>

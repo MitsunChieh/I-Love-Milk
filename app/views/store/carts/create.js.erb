@@ -1,6 +1,7 @@
 <% if @success %>
-
+  $('#cart-qty').html('購物車：<%= current_cart.qty %>');
+  $('#cart-qty').css('color', 'red');
+  // $('#cart-qty').css({color: red});  <<  不行？
 <% else %>
-
-alert('<%= @message %>');
+  alert('<%= @message %>');
 <% end %>

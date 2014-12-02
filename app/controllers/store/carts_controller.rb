@@ -13,13 +13,20 @@ class Store::CartsController < ApplicationController
 
     if @cart.can_add_product?(@product.id, qty)
       @cart.add_cartItem(@product.id, @product.price, qty)
-      @product.qty -= qty
+      # @product.qty -= qty
       @product.save
 
       @success = true
     else
       @success = false
-      @message = "Can not add!"
+      q = @cart.qty_differ(@product.id, qty)
+      if qty < 0
+        @message = "請輸入正數"
+      elsif q == 0
+        @message = "單品數量已達庫存上限"
+      else
+        @message = "庫存量不足，最多可再加入#{q}瓶"
+      end
     end
 
     respond_to do |format|
@@ -31,7 +38,7 @@ class Store::CartsController < ApplicationController
 
   def destroy
     @pid = params[:p_id]
-    current_cart.remove_cartItem(pid)
+    current_cart.remove_cartItem(@pid)
 
     respond_to do |format|
       format.html { redirect_to :back }

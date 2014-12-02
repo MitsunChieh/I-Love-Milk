@@ -1,8 +1,15 @@
 class Cart < ActiveRecord::Base
-  has_many :cart_items
+
+  # validates_numericality_of :qty, only_integer: true, greater_than: 0
+
+  has_many :cart_items, dependent: :destroy
 
   def can_add_product?(p_id, qty)
-    Product.find(p_id).qty >= qty
+    qty_differ(p_id, qty) >= qty && qty >= 0
+  end
+
+  def qty_differ(p_id, qty)
+    Product.find(p_id).qty - ( find_cartItem(p_id).try(:qty) || 0 )
   end
 
   def add_cartItem(p_id, price, qty)
@@ -12,16 +19,18 @@ class Cart < ActiveRecord::Base
                              qty: qty)
     else
       cartItem = find_cartItem(p_id)
-      cartItem.qty +=qty
+      cartItem.qty += qty
       cartItem.save
     end
     self.amount += price*qty
+    self.qty += qty
     self.save
   end
 
   def remove_cartItem(p_id)
     i = find_cartItem(p_id)
     self.amount -= i.product.price*i.qty
+    self.qty -= i.qty
     self.save
     i.destroy
   end
