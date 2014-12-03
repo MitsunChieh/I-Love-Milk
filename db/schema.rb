@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125082039) do
+ActiveRecord::Schema.define(version: 20141203081252) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "cart_id"
@@ -75,8 +75,11 @@ ActiveRecord::Schema.define(version: 20141125082039) do
     t.datetime "fb_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
+    t.datetime "token_expired"
   end
 
   add_index "users", ["fb_uid"], name: "index_users_on_fb_uid", using: :btree
+  add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
 end
