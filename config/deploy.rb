@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:MitsunChieh/I-Love-Milk.git'
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 set :deploy_to, '/home/deploy/ilovemilk'
 set :keep_releases, 5
-set :linked_files, %w{config/database.yml config/secrets.yml config/facebook.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/facebook.yml config/email.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 

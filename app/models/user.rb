@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   before_validation :setup_token, :on => :create
 
   def self.from_omniauth(auth_hash)
-    user = where( :fb_uid => auth_hash[:uid] ).first_or_initialize
+    user = where( fb_uid: auth_hash[:uid] ).first_or_initialize
     user.name = auth_hash[:info][:name]
     user.email = auth_hash[:info][:email]
 
@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
   end
 
   def self.verify_facebook_token(access_token)
-    conn = Faraday.new(:url => 'https://graph.facebook.com/me')
-    response = conn.get "/me", { :access_token => access_token }
+    conn = Faraday.new(url: 'https://graph.facebook.com/me')
+    response = conn.get "/me", { access_token: access_token }
     data = JSON.parse(response.body)
 
     if response.status == 200

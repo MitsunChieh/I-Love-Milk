@@ -18,6 +18,8 @@ class Store::OrdersController < ApplicationController
     session[:cart_id] = nil
     current_cart.destroy
 
+    OrderMailer.confirm(current_user, order).deliver
+
     redirect_to store_orders_path
   end
 

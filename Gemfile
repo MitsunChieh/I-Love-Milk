@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "letter_opener", :group => :development
+
 gem 'omniauth-facebook'
 
 # gem 'devise'
@@ -12,13 +14,6 @@ gem "paperclip"
 group :test, :development do
   gem "rspec-rails"
 end
-
-group :development do
-  gem "better_errors"
-end
-
-gem 'capistrano-rails', :group => :development
-gem 'capistrano-passenger', :group => :development
 
 group :development do
   gem "better_errors"
