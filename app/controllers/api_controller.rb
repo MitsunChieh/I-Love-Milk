@@ -1,4 +1,4 @@
-class ApiController < ApplicationController
+class ApiController < ActionController::Base
 
   helper_method :current_user
 
