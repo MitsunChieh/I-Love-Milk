@@ -1,40 +1,32 @@
-<% if current_user %>
-  Hi, <%= current_user.name %>
-  <%= link_to "登出", auth_signout_path, :method => :delete %></a>
+<table width="300px">
+  <tr>
+    <th>產品名稱</th>
+    <th>單價</th>
+    <th>數量</th>
+    <th>總價</th>
+  </tr>
 
-  <table width="300px">
+  <% @cart.cart_items.each do |i| %>
     <tr>
-      <th>產品名稱</th>
-      <th>單價</th>
-      <th>數量</th>
-      <th>總價</th>
+      <td><%= i.product.name %></td>
+      <td><%= i.product.price %></td>
+      <td><%= i.qty %></td>
+      <td><%= i.product.price*i.qty %></td>
     </tr>
-
-    <% @cart.cart_items.each do |i| %>
-      <tr>
-        <td><%= i.product.name %></td>
-        <td><%= i.product.price %></td>
-        <td><%= i.qty %></td>
-        <td><%= i.product.price*i.qty %></td>
-      </tr>
-    <% end %>
-
-    <tr>
-      <td></td>
-      <td></td>
-      <td>結帳金額：</td>
-      <td><%= @cart.amount %></td>
-    </tr>
-  </table>
-
-  <%= form_for @order, url: store_orders_path(cart_id: @cart.id) do |f| %>
-
-    <%= f.label :address, '收貨地址' %>
-    <%= f.text_field :address %>
-    <%= f.submit '送出訂單'%>
-
   <% end %>
 
-<% else %>
- <%= link_to "Facebook 登入", "/auth/facebook" %></a>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>結帳金額：</td>
+    <td><%= @cart.amount %></td>
+  </tr>
+</table>
+
+<%= form_for @order, url: store_orders_path(cart_id: @cart.id) do |f| %>
+
+  <%= f.label :address, '收貨地址' %>
+  <%= f.text_field :address %>
+  <%= f.submit '送出訂單'%>
+
 <% end %>
