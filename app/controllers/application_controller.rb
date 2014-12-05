@@ -11,6 +11,17 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def require_login
+    unless current_user
+      flash[:alert] = "請登入"
+      if request.referer
+        redirect_to :back
+      else
+        redirect_to store_path
+      end
+    end
+  end
+
   def current_user
     @current_user = User.find(session[:user_id]) if session[:user_id]
   end
@@ -32,6 +43,14 @@ class ApplicationController < ActionController::Base
     Rails.logger.debug('current_cart')
     Rails.logger.debug(@cart.inspect)
     @cart
+  end
+
+  def require_admin
+    if current_user && current_user.admin?
+      # OK!
+    else
+      redirect_to store_pathpro
+    end
   end
 
 end

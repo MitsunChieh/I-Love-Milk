@@ -1,5 +1,7 @@
 class Store::OrdersController < ApplicationController
 
+  before_action :require_login
+
   def index
     @orders = Order.page(params[:page]).per(5)
   end

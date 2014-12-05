@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-tw">
 <head>
+  <meta charset="UTF-8">
+  <meta name="keyword" content="牛奶,鮮乳,鮮奶" >
+  <meta name="description" content="小農品牌鮮乳直送">
   <title>鮮乳坊</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
@@ -20,6 +23,17 @@
   </script>
 </head>
 <body>
+
+<% if current_user %>
+  Hi, <%= current_user.name %>
+  <%= link_to "登出", auth_signout_path, method: :delete %></a>
+<% else %>
+ <%= link_to "Facebook 登入", "/auth/facebook" %></a>
+<% end %>
+
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
 
 <%= yield %>
 

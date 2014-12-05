@@ -1,6 +1,10 @@
 require 'csv'
 class Admin::PackagesController < ApplicationController
 
+  before_action :require_login
+  before_action :require_admin
+  skip_before_action :setup_cart
+
   def index
     respond_to do |format|
       format.html
