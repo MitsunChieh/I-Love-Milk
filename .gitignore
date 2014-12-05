@@ -18,5 +18,6 @@
 db-structure.txt
 latest.sql
 /config/facebook.yml
-/config/secrets.yml
 /config/email.yml
+
+/public/system
