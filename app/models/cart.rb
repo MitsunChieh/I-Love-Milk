@@ -1,35 +1,35 @@
 class Cart < ActiveRecord::Base
 
-  # validates_numericality_of :qty, only_integer: true, greater_than: 0
+  validates_presence_of :amount, :qty
 
   has_many :cart_items, dependent: :destroy
 
-  def can_add_product?(p_id, qty)
-    qty_differ(p_id, qty) >= qty && qty >= 0
+  def can_add_product?(product, qty)
+    qty_difference(product, qty) >= qty && qty >= 0
   end
 
-  def qty_differ(p_id, qty)
-    Product.find(p_id).qty - ( find_cartItem(p_id).try(:qty) || 0 )
+  def qty_difference(product, qty)
+    product.qty - ( find_cart_item(product).try(:qty) || 0 )
   end
 
-  def add_cartItem(p_id, price, qty)
-    unless same_product_in_cart?(p_id)
-      CartItem.create(   cart_id: self.id,
-                      product_id: p_id,
-                             qty: qty)
+  def add_cart_item(product, qty)
+    unless same_product_in_cart?(product)
+      CartItem.create(     cart: self,
+                        product: product,
+                            qty: qty)
     else
-      cartItem = find_cartItem(p_id)
-      cartItem.qty += qty
-      cartItem.save
+      cart_item = find_cart_item(product)
+      cart_item.qty += qty
+      cart_item.save
     end
-    self.amount += price*qty
+    self.amount += product.price * qty
     self.qty += qty
     self.save
   end
 
-  def remove_cartItem(p_id)
-    i = find_cartItem(p_id)
-    self.amount -= i.product.price*i.qty
+  def remove_cart_item(product)
+    i = find_cart_item(product)
+    self.amount -= i.product.price * i.qty
     self.qty -= i.qty
     self.save
     i.destroy
@@ -37,12 +37,12 @@ class Cart < ActiveRecord::Base
 
   private
 
-  def same_product_in_cart?(p_id)
-    find_cartItem(p_id)
+  def same_product_in_cart?(product)
+    !!find_cart_item(product)
   end
 
-  def find_cartItem(p_id)
-    cart_items.where(product_id: p_id).first
+  def find_cart_item(product)
+    cart_items.where( product: product ).first
   end
 
 end

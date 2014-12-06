@@ -1,5 +1,5 @@
 <h1>鮮乳坊</h1>
-<%= render 'common/floatCart' %>
+<%= render 'common/float_cart' %>
 <br>
 <%= link_to '前往購物車', store_cart_path %>
 <%= link_to '前往訂單列表', store_orders_path %>
@@ -12,7 +12,9 @@
     價格：<%= p.price %>
     剩餘數量：<%= p.qty %>
     <%= link_to '前往商品頁', store_product_path(p) %>
-    <%= render 'common/cartUpdate', p: p %></p>
+    <%= render 'common/cart_update', p: p %></p>
   </li>
 <% end %>
 </ul>
+
+<%= paginate @products %>

@@ -20,12 +20,13 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  unless Rails.env.production?
+  # unless Rails.env.production?
     namespace :admin do
       get :packages, to: 'packages#index'
+      resources :products
       # get :export, to: 'packages#export'
     end
-  end
+  # end
 
   scope :path => '/api/v1/', :module => "api_v1",
                              :defaults => { :format => :json }, :as => 'v1' do

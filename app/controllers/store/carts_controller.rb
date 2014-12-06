@@ -11,15 +11,12 @@ class Store::CartsController < ApplicationController
   def create
     setup_cart
 
-    if @cart.can_add_product?(@product.id, qty)
-      @cart.add_cartItem(@product.id, @product.price, qty)
-      # @product.qty -= qty
-      @product.save
-
+    if @cart.can_add_product?(@product, qty)
+      @cart.add_cart_item(@product, qty)
       @success = true
     else
       @success = false
-      q = @cart.qty_differ(@product.id, qty)
+      q = @cart.qty_difference(@product, qty)
       if qty < 0
         @message = "請輸入正數"
       elsif q == 0
@@ -33,15 +30,13 @@ class Store::CartsController < ApplicationController
       format.html { redirect_to store_cart_path }
       format.js
     end
-
   end
 
   def destroy
-    @pid = params[:p_id]
-    current_cart.remove_cartItem(@pid)
+    current_cart.remove_cart_item(@product)
 
     respond_to do |format|
-      format.html { redirect_to :back }
+      # format.html { redirect_to :back }
       format.js
     end
   end

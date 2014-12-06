@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
     if current_user && current_user.admin?
       # OK!
     else
-      redirect_to store_pathpro
+      redirect_to store_path
     end
   end
 

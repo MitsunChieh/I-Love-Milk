@@ -39,7 +39,7 @@ RSpec.describe Cart, :type => :model do
   end
 
 
-  # def add_cartItem(p_id, qty)
+  # def add_cart_item(p_id, qty)
   #   CartItem.create(   cart_id: self.id,
   #                   product_id: p_id,
   #                          qty: qty)

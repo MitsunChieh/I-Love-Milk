@@ -1,4 +1,4 @@
-<%= render 'common/floatCart' %>
+<%= render 'common/float_cart' %>
 
 <p>
 <%= @product.name %>
@@ -6,7 +6,7 @@
 剩餘數量：<%= @product.qty %>
 </p>
 
-<%= render 'common/cartUpdate', p: @product %>
+<%= render 'common/cart_update', p: @product %>
 
 <%= link_to '回商品列表', store_path %>
 <%= link_to '前往購物車', store_cart_path %>

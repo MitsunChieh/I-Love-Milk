@@ -19,16 +19,17 @@
   ga('require', 'linkid', 'linkid.js');
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
-
   </script>
 </head>
 <body>
 
-<% if current_user %>
-  Hi, <%= current_user.name %>
-  <%= link_to "登出", auth_signout_path, method: :delete %></a>
-<% else %>
- <%= link_to "Facebook 登入", "/auth/facebook" %></a>
+<% unless controller.controller_name == 'landingpages' %>
+  <% if current_user %>
+    Hi, <%= current_user.name %>
+    <%= link_to "登出", auth_signout_path, method: :delete %><br>
+  <% else %>
+    <%= link_to "Facebook 登入", "/auth/facebook" %><br>
+  <% end %>
 <% end %>
 
 <% if flash[:alert] %>
