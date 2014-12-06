@@ -1,0 +1,15 @@
+<%= form_for @product, url: admin_products_path, remote: :true do |p| %>
+  <%= p.label :name, '商品名稱' %>
+  <%= p.text_field :name %>
+  <br>
+  <%= p.label :price, '商品價格' %>
+  <%= p.text_field :price %>
+  <br>
+  <%= p.label :qty, '上架數量' %>
+  <%= p.text_field :qty %>
+  <br>
+  <%= p.label :description, '文字描述' %>
+  <%= p.text_area :description %>
+  <br>
+  <%= p.submit '加入商品' %>
+<% end %>
