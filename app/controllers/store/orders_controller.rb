@@ -11,9 +11,9 @@ class Store::OrdersController < ApplicationController
   end
 
   def create
-    order = Order.create( :user_id => current_user.id,
-                          :address => params[:order][:address],
-                          :amount => current_cart.amount )
+    order = Order.create( user_id: current_user.id,
+                          address: params[:order][:address],
+                          amount: current_cart.amount )
 
     order.add_order_item(current_cart)
 

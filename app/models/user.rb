@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  has_many :orders
 
-  before_validation :setup_token, :on => :create
+  validates_presence_of :email, :name
+  before_validation :setup_token, on: :create
+
+  has_many :orders
 
   def admin?
     self.level == 'admin'

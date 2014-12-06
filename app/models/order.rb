@@ -1,4 +1,7 @@
 class Order < ActiveRecord::Base
+
+  validates_presence_of :user_id, :amount, :address
+
   belongs_to :user
   has_many :order_items, dependent: :destroy
 
