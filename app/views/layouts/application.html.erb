@@ -40,9 +40,9 @@
         <ul>
           <li><%= link_to '鮮乳坊', welcome_path, 'data-no-turbolink' => true %></li>
           <li><%= link_to '商品列表', store_path %></li>
-          <li><%= link_to '獨立品牌', 'javascript:;' %></li>
-          <li><a href="javascript:;">農場故事</a></li>
-          <li><a href="javascript:;">關於我</a></li>
+          <li><%= link_to '獨立品牌', brands_path %></li>
+          <li><%= link_to '農場故事', blogs_path %></li>
+          <li><%= link_to '關於我', about_path %></li>
         </ul>
       </div>
     </div>
@@ -56,5 +56,14 @@
 
 <%= yield %>
 
+<% unless controller.controller_name == 'landingpages' %>
+  <div class="milk">
+    <div class="wrapper">
+      <div class="copyright">
+        <p>鮮乳坊 &copy;2014 | MitsunChieh</p>
+      </div>
+    </div>
+  </div>
+<% end %>
 </body>
 </html>

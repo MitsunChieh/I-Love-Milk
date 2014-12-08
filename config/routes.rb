@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :brands
+  resources :blogs
+  get :about, to: 'about#index'
+
+
   get 'welcome', to: 'welcome#index'
 
   get 'store', to: 'store#index'

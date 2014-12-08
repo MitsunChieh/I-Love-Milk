@@ -23,7 +23,7 @@
     </div>
     <div class="topic">
       <div class="row">
-        <a href="javascript:;" class="shop-img"></a>
+        <%= link_to '', store_path, class: "shop-img" %>
         <div class="content shop">
           <h3>商品列表</h3>
           <h4>小農品牌的優質鮮奶</h4>
@@ -44,12 +44,12 @@
           <p>venenatis all terycursus massa quis,</p>
           <p>conseqgestas mi, aenean. adipiscing libreo et</p>
           <p>dui consequat.</p>
-          <div class="button farm"><a href="javascript:;">前往閱讀</a></div>
+          <div class="button farm"><%= link_to '前往閱讀', blogs_path %></div>
         </div>
-        <a href="javascript:;" class="farm-img"></a>
+        <%= link_to '', blogs_path, class: "farm-img" %>
       </div>
       <div class="row">
-        <a href="javascript:;" class="about-img"></a>
+      <%= link_to '', about_path, class: "about-img" %>
         <div class="content about">
           <h3>關於鮮乳坊</h3>
           <p>Lorem ipsum dolor sitcing elit. Nunc</p>
@@ -78,9 +78,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="copyright">
-      <p>鮮乳坊 &copy;2014 | MitsunChieh</p>
     </div>
   </div>
 </div>
