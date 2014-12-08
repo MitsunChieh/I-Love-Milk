@@ -23,14 +23,32 @@
 </head>
 <body>
 
+
 <% unless controller.controller_name == 'landingpages' %>
-  <% if current_user %>
-    Hi, <%= current_user.name %>
-    <%= link_to "登出", auth_signout_path, method: :delete %><br>
-  <% else %>
-    <%= link_to "Facebook 登入", "/auth/facebook" %><br>
-  <% end %>
+  <div class="fb-auth">
+    <% if current_user %>
+      Hi, <%= current_user.name %>
+      <%= link_to "登出", auth_signout_path, method: :delete %><br>
+    <% else %>
+      <%= link_to "Facebook 登入", "/auth/facebook" %><br>
+    <% end %>
+  </div>
+
+  <div class="milk">
+    <div class="wrapper">
+      <div class="nav">
+        <ul>
+          <li><%= link_to '鮮乳坊', welcome_path, 'data-no-turbolink' => true %></li>
+          <li><%= link_to '商品列表', store_path %></li>
+          <li><%= link_to '獨立品牌', 'javascript:;' %></li>
+          <li><a href="javascript:;">農場故事</a></li>
+          <li><a href="javascript:;">關於我</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 <% end %>
+
 
 <% if flash[:alert] %>
   <p><%= flash[:alert] %></p>

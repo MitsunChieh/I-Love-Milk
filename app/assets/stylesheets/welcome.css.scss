@@ -1,0 +1,483 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.milk{
+  h1{ font-size: 30px;}
+  h2{ font-size: 24px;}
+  h3{ font-size: 20px;}
+  h4{ font-size: 16px;}
+  p{ font-size: 14px;}
+  a{ text-decoration: none;}
+  .wrapper{
+    background-color: #f9f8f7;
+    width: 940px;
+    margin: auto;
+  }
+  span{
+    font-size:140%;
+  }
+  .nav{
+    width: 100%;
+    height: 62px;
+    margin: auto;
+    text-align: center;
+    font-size: 0;
+    border-bottom: 1px solid #e0dad1;
+  }
+  .nav li{
+    display: inline-block;
+  }
+  .nav li a{
+    width: 130px;
+    display: inline-block;
+    padding: 25px 0 18px 0;
+    color: #000;
+    font-size: 18px;
+    font-weight: lighter;
+    position: relative;
+  }
+  .nav li a:hover{
+    font-weight: 600;
+    border-bottom: 3px solid #b4a890;
+  }
+  .nav li a:hover:after{
+    content: "";
+    width: 3px;
+    height: 3px;
+    border: 2px solid #b4a890;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    position: absolute;
+    left: 50%;
+    margin-left: -2px;
+    bottom: 2px;
+  }
+  .logo{
+    width: 100%;
+    height: 195px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    font-size: 0;
+  }
+  .logo:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .logo h1{
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #fff,
+                 2px 2px 2px #ddd,
+                 3px 3px 2px #bbb,
+                 4px 4px 2px #999,
+                 5px 5px 2px #777,
+                 6px 6px 2px #555,
+                 7px 7px 2px #333,
+                 8px 8px 2px #111;
+  }
+  /*.logo-img{
+    background-image: image-url('logo.gif');
+    position: absolute;
+    width: 212px;
+    height: 113px;
+    top: 38px;
+    left: 50%;
+    margin-left: -106px;
+  }*/
+  .overview{
+    width: 100%;
+    height: 480px;
+    padding: 10px 0 0 0;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    font-size: 0;
+  }
+  .slider{
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  .pic{
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .pic li{
+    float: left;
+  }
+  .pic li img{
+    height: 480px;
+    vertical-align: middle;
+  }
+  .clearFix{
+    width: 100%;
+    height: 0;
+    clear: both;
+  }
+  .control{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+  }
+  .control li{
+    display: inline-block;
+  }
+  .control a{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #b4a890;
+    border-radius: 50%;
+    margin: 6px;
+  }
+  .control a:hover{
+    background-color: #ff0;
+  }
+  .now a{
+    background-color: #fff;
+  }
+  .bf{
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+    left: 0;
+  }
+  .bf:before{
+    content: "";
+    width: 11px;
+    height: 11px;
+    border: 3px solid #b4a890;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+    position: absolute;
+    left: 50%;
+    margin-left: -7px;
+    bottom: 50%;
+    margin-bottom: -7px;
+  }
+  .bf:hover:before{
+    border-color: #fff;
+  }
+  .ff{
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+    right: 0;
+  }
+  .ff:before{
+    content: "";
+    width: 11px;
+    height: 11px;
+    border: 3px solid #b4a890;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    position: absolute;
+    left: 50%;
+    margin-left: -7px;
+    bottom: 50%;
+    margin-bottom: -7px;
+  }
+  .ff:hover:before{
+    border-color: #fff;
+  }
+  .welcome{
+    width: 100%;
+    height: 188px;
+    margin: auto;
+    text-align: center;
+    position: static;
+  }
+  .welcome:after{
+    content: "";
+    display: block;
+    width: 78px;
+    height: 1px;
+    background-color: #d3cbc2;
+    position: relative;
+    left: 50%;
+    margin-left: -39px;
+    top: 15px;
+  }
+  .welcome h2{
+    padding-top: 50px;
+    padding-bottom: 17px;
+  }
+  .welcome p{
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .topic{
+    width: 100%;
+    height: 1048px;
+    padding-top: 52px;
+    margin: auto;
+    /*background-color: #f9f8f7;*/
+  }
+  .row{
+    width: 940px;
+    height: 360px;
+    margin: auto;
+  }
+  .row:last-child{
+    height: 270px;
+  }
+  .row a{
+    float: left;
+  }
+  .content{
+    width: 400px;
+    height: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+  }
+  .content:before{
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 20px solid;
+    position: absolute;
+    top: 50%;
+  }
+  .content h3{
+    margin: 68px auto 8px auto;
+  }
+  .content h4{
+    margin-bottom: 29px;
+  }
+  .content p{
+    font-size: 13px;
+    margin-bottom: 9px;
+  }
+  .button{
+    width: 108px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .button a{
+    display: inline-block;
+    width: 108px;
+  }
+  .shop{
+    background-color: #fff;
+    color: #000;
+  }
+  .shop:before{
+    border-left: none;
+    border-color: transparent #fff transparent transparent;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+  .shop .button{
+    margin: 33px auto;
+    background-color: #bbaf9a;
+  }
+  .shop .button a{
+    color: #fff;
+  }
+  .shop-img{
+    display: inline-block;
+    width: 540px;
+    height: 360px;
+    background-image: image-url('milk-shop.gif');
+  }
+  .farm{
+    background-color: #bbaf9a;
+    color: #fff;
+  }
+  .farm:before{
+    border-right: none;
+    border-color: transparent transparent transparent #bbaf9a;
+    left: 100%;
+    margin-top: -20px;
+  }
+  .farm .button{
+    margin: 33px auto;
+    background-color: #fff;
+  }
+  .farm .button a{
+    color: #757575;
+  }
+  .farm-img{
+    display: inline-block;
+    width: 540px;
+    height: 360px;
+    background-image: image-url('farm-story.gif');
+  }
+  .about{
+    width: 270px;
+    height: 270px;
+    background-color: #fff;
+    position: relative;
+  }
+  .about:before{
+    border-left: none;
+    border-color: transparent #fff transparent transparent;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+  .about h3{
+    margin: 55px auto 24px auto;
+  }
+  .about:after{
+    content: "";
+    display: block;
+    width: 78px;
+    height: 1px;
+    background-color: #d3cbc2;
+    position: absolute;
+    left: 50%;
+    margin-left: -39px;
+    top: 215px;
+  }
+  .about-img{
+    display: inline-block;
+    width: 240px;
+    height: 270px;
+    background-image: image-url('about.gif');
+  }
+  .news{
+    width: 430px;
+    height: 270px;
+    background-color: #f4efe8;
+    float: left;
+    text-align: center;
+    position: relative;
+    font-style: 0;
+  }
+  .sort, .sub{
+    display: inline-block;
+    position: absolute;
+  }
+  .sort{
+    left: 44px;
+    top: 64px;
+  }
+  .next, .previous{
+    display: block;
+    width: 32px;
+    height: 24px;
+    padding: 2px;
+    margin: 2px;
+    position: relative;
+    right: -28px;
+    line-height: 24px;
+    font-size: 32px;
+  }
+  .next a, .previous a{
+    color: #b9b5b0;
+  }
+  .watching{
+    width: 60px;
+    height: 42px;
+    padding: 2px;
+    margin: 12px;
+    line-height: 42px;
+    font-size: 56px;
+    color: #afa188;
+  }
+  .sub{
+    left: 132px;
+    text-align: left;
+  }
+  .sub h3{
+    margin: 55px auto 24px auto;
+  }
+  .sub p{
+    font-size: 13px;
+    margin-bottom: 8.5px;
+  }
+  .select{
+    width: 39px;
+    height: 7px;
+    float: right;
+    position: absolute;
+    right: 60px;
+    font-size: 0;
+    top: 215px;
+  }
+  .square{
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: #d7cec0;
+    margin-left: 9px;
+  }
+  .sq1{
+    background-color: #afa188;
+    margin-left: 0;
+  }
+  .details{
+    width: 100%;
+    height: 183px;
+    padding-top: 14px;
+    text-align: center;
+    /*background-color: #f9f8f7;*/
+    font-size: 0;
+    border-bottom: 1px solid #e1dcd4;
+  }
+  .col6{
+    font-size: 16px;
+    width: 144px;
+    height: 120px;
+    margin: auto 11px auto 11px;
+    display: inline-block;
+    margin-top: 33px;
+    text-align: left;
+  }
+  .col6:first-child{
+    margin-left: 30px;
+  }
+  .col6:last-child{
+    margin-right: 11px;
+  }
+  .col6 h3{
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  .col6 li{
+    color: #939393;
+    font-family: Droi Sans;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .col6 a{
+    color: #939393;
+  }
+  .copyright{
+    width: 100%;
+    height: 67px;
+    text-align: center;
+    border-top: 1px solid #e1dcd4;
+  }
+  .copyright:before{
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .copyright p{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 9.5px;
+  }
+}

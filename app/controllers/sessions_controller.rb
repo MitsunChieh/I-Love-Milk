@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     Rails.logger.debug( env["omniauth.auth"] )
 
     flash[:alert]='Login failed'
-    redirect_to store_path
+    redirect_to :back
   end
 
   def destroy
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
 
     flash[:notice]='Logout Successfully'
-    redirect_to store_path
+    redirect_to :back
   end
 
   private

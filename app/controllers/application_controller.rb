@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       if request.referer
         redirect_to :back
       else
-        redirect_to store_path
+        redirect_to welcome_path
       end
     end
   end
@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
     if current_user && current_user.admin?
       # OK!
     else
-      redirect_to store_path
+      redirect_to welcome_path
     end
   end
 

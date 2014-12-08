@@ -13,4 +13,26 @@
  *= require_self
  *= require reset
  *= require index
+ *= require welcome
+ *= require store
  */
+
+.fb-auth{
+  position: fixed;
+  top: 10px;
+  right: 0;
+  margin-right: 0px;
+  background-color: rgba(244, 137, 11, .5);
+  font-size: 0;
+}
+.fb-auth a{
+  font-size: 14px;
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: rgba(208, 124, 24, .8);
+  border: #d07c18 solid 2px;
+  box-shadow: #000 5px 5px 4px;
+  color: #fff;
+}

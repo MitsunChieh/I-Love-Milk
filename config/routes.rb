@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'welcome', to: 'welcome#index'
+
   get 'store', to: 'store#index'
   namespace :store do
     get 'products/:id', as: :product, to: 'products#show'
