@@ -1,3 +1,72 @@
-// Place all the styles related to the store controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.milk{
+  .products{
+    width: 70%;
+    height: 700px;
+    padding-top: 20px;
+    margin: auto;
+    font-size: 0;
+
+    h2{
+      margin-bottom: 10px;
+    }
+
+    .product{
+      font-size: 14px;
+      background-color: #ddd;
+      display: block;
+      width: 273px;
+      height: 250px;
+      float: left;
+      padding: 30px 20px;
+      border-radius: 30px;
+      margin: 8px;
+
+      a{
+        color: #000;
+        p{ font-size: 18px; }
+        .name{ font-size: 20px; }
+      }
+      #cart_item_qty{
+        width: 40px;
+        display: inline-block;
+        /*padding: 6px 12px;*/
+        /*margin-top: 10px;*/
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.428571429;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        color: #f9f8f3;
+        background-color: #a6e22d;
+        border-color: #a6d213;
+      }
+      input{
+        display: inline-block;
+        padding: 6px 12px;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.428571429;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        color: #f9f8f3;
+        background-color: #ff7f32;
+        border-color: #ff6f18;
+      }
+    }
+    .paging{
+      span{
+        font-size: 16px;
+      }
+      font-size: 16px;
+    }
+  }
+}

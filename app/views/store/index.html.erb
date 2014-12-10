@@ -1,20 +1,23 @@
-<h1>鮮乳坊</h1>
-<%= render 'common/float_cart' %>
-<br>
-<%= link_to '前往購物車', store_cart_path %>
-<%= link_to '前往訂單列表', store_orders_path %>
-<p>商品列表</p>
-<ul>
-<% @products.each do |p| %>
-  <br>
-  <li>
-    <p><%= p.name %>
-    價格：<%= p.price %>
-    剩餘數量：<%= p.qty %>
-    <%= link_to '前往商品頁', store_product_path(p) %>
-    <%= render 'common/cart_update', p: p %></p>
-  </li>
-<% end %>
-</ul>
+<div class="milk">
+  <div class="wrapper">
+    <div class="products">
+      <h2>商品列表</h2>
+      <ul>
+        <% @products.each do |p| %>
+        <li class="product product_<%= p.id %>">
+          <%= link_to store_product_path(p) do %>
+            <p class="name"><%= p.name %></p>
+            <%= image_tag p.logo_url.url(:thumb) %>
+            <p>價格：<%= p.price %></p>
+            <p>剩餘數量：<%= p.qty %></p>
+          <% end %>
+          <%= render 'common/cart_update', p: p %>
+        </li>
+        <% end %>
+      </ul>
+      <div class="clearFix"></div>
+      <div class="paging"><%= paginate @products %></div>
+    </div>
+  </div>
+</div>
 
-<%= paginate @products %>

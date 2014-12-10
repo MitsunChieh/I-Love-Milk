@@ -1,7 +1,10 @@
 <% if @success %>
   $('#cart-qty').html('購物車：<%= current_cart.qty %>');
   $('#cart-qty').css({color: 'red'});
+  $('.cart').css({backgroundColor: '#666'})
   // $('#cart-qty').css({color: red});  <<  不行？
 <% else %>
-  alert('<%= @message %>');
+  $('body').append('<div class="message"><p><%= @message %></p><%= link_to '好', 'javascript:close();' %></div>');
+  function close(){$('.message').remove()};
+  // alert('<%= @message %>');
 <% end %>
