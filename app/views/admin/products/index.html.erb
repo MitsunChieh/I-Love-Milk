@@ -5,7 +5,9 @@
   <% @products.each do |p| %>
     <br>
     <li>
-      <p><%= p.name %></p>
+      <p><%= p.name %>
+      <%= link_to 'update', admin_product_path(p), remote: :true %></p>
+      <%= image_tag p.logo_url.url(:thumb) %>
       <p>價格：<%= p.price %></p>
       <p>剩餘數量：<%= p.qty %></p>
     </li>

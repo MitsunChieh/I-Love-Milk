@@ -4,6 +4,8 @@ class Admin::ProductsController < ApplicationController
   before_action :require_admin
   skip_before_action :setup_cart
 
+  before_action :find_product, only: [:show, :update]
+
   def index
     @products = Product.page(params[:page]).per(5)
   end
@@ -14,12 +16,13 @@ class Admin::ProductsController < ApplicationController
     respond_to do |format|
       format.js
     end
-
   end
 
   def create
     @product = Product.create(product_params)
 
+    redirect_to admin_products_path
+  end
     respond_to do |format|
       format.js
     end
@@ -28,8 +31,12 @@ class Admin::ProductsController < ApplicationController
 
   private
 
+  def find_product
+    @product = Product.find(params[:id])
+  end
+
   def product_params
-    params.require(:product).permit(:name, :description, :price, :qty)
+    params.require(:product).permit(:name, :description, :price, :qty, :logo_url)
   end
 
 end

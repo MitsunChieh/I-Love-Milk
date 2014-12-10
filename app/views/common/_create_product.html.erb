@@ -1,4 +1,4 @@
-<%= form_for @product, url: admin_products_path, remote: :true do |p| %>
+<%= form_for product, url: admin_products_path, html: { multipart: :true } do |p| %>
   <%= p.label :name, '商品名稱' %>
   <%= p.text_field :name %>
   <br>
@@ -11,5 +11,9 @@
   <%= p.label :description, '文字描述' %>
   <%= p.text_area :description %>
   <br>
+  <%= p.label :logo_url, '商品圖片' %>
+  <%= p.file_field :logo_url %>
+  <br>
   <%= p.submit '加入商品' %>
 <% end %>
+
