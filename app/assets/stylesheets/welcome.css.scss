@@ -11,7 +11,8 @@
   a{ text-decoration: none;}
   .wrapper{
     background-color: #f9f8f7;
-    width: 940px;
+    width: 100%;
+    max-width: 940px;
     margin: auto;
   }
   span{
@@ -216,8 +217,8 @@
     top: 15px;
   }
   .welcome h2{
-    padding-top: 50px;
-    padding-bottom: 17px;
+    padding-top: 30px;
+    padding-bottom: 7px;
   }
   .welcome p{
     font-style: italic;
@@ -371,7 +372,7 @@
     left: 44px;
     top: 64px;
   }
-  .next, .previous{
+  .next-arrow, .previous-arrow{
     display: block;
     width: 32px;
     height: 24px;
@@ -382,7 +383,7 @@
     line-height: 24px;
     font-size: 32px;
   }
-  .next a, .previous a{
+  .next-arrow a, .previous-arrow a{
     color: #b9b5b0;
   }
   .watching{
