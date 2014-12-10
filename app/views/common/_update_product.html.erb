@@ -1,0 +1,19 @@
+<%= form_for product, url: admin_product_path(product), method: :PATCH, html: { multipart: :true } do |p| %>
+  <%= p.label :name, '商品名稱' %>
+  <%= p.text_field :name %>
+  <br>
+  <%= p.label :price, '商品價格' %>
+  <%= p.text_field :price %>
+  <br>
+  <%= p.label :qty, '上架數量' %>
+  <%= p.text_field :qty %>
+  <br>
+  <%= p.label :description, '文字描述' %>
+  <%= p.text_area :description %>
+  <br>
+  <%= p.label :logo_url, '商品圖片' %>
+  <%= p.file_field :logo_url %>
+  <br>
+  <%= p.submit '更新商品' %>
+<% end %>
+

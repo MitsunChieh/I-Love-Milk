@@ -23,10 +23,17 @@ class Admin::ProductsController < ApplicationController
 
     redirect_to admin_products_path
   end
+
+  def show
     respond_to do |format|
       format.js
     end
+  end
 
+  def update
+    @product.update(product_params)
+
+    redirect_to admin_products_path
   end
 
   private
