@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+w = $('.float-button').width()
+$('.float-button').css({marginLeft : w/2})

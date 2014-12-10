@@ -23,15 +23,36 @@
 </head>
 <body>
 
+<% if flash[:alert] %>
+  <div class="alert">
+    <p><%= flash[:alert] %></p>
+    <%= link_to '好', "javascript:close();" %>
+  </div>
+  <script>
+    function close(){$('.alert').remove()};
+  </script>
+<% end %>
 
-<% unless controller.controller_name == 'landingpages' %>
-  <div class="fb-auth">
+<% unless controller.controller_name == 'landingpages' || controller.controller_path.split('/').first == 'admin' %>
+  <div class="float-button">
+    <div class="fb-auth">
+      <% if current_user %>
+        Hi, <%= current_user.name %>
+        <%= link_to "登出", auth_signout_path, method: :delete %><br>
+      <% else %>
+        <%= link_to "Facebook 登入", "/auth/facebook" %><br>
+      <% end %>
+    </div>
+    <div class="float float_cart">
+      <%= render 'common/float_cart' %>
+    </div>
     <% if current_user %>
-      Hi, <%= current_user.name %>
-      <%= link_to "登出", auth_signout_path, method: :delete %><br>
-    <% else %>
-      <%= link_to "Facebook 登入", "/auth/facebook" %><br>
-    <% end %>
+        <div class="float float_order">
+          <%= link_to store_orders_path do %>
+            <p id="order-list">訂單列表</p>
+          <% end %>
+        </div>
+      <% end %>
   </div>
 
   <div class="milk">
@@ -49,14 +70,9 @@
   </div>
 <% end %>
 
-
-<% if flash[:alert] %>
-  <p><%= flash[:alert] %></p>
-<% end %>
-
 <%= yield %>
 
-<% unless controller.controller_name == 'landingpages' %>
+<% unless controller.controller_name == 'landingpages' || controller.controller_path.split('/').first == 'admin'%>
   <div class="milk">
     <div class="wrapper">
       <div class="copyright">
@@ -65,5 +81,6 @@
     </div>
   </div>
 <% end %>
+
 </body>
 </html>

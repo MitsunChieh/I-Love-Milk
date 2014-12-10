@@ -10,29 +10,109 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
  *= require reset
+ *= require_self
  *= require landingpage
  *= require welcome
  *= require store
+ *= require products
+ *= require cart
  */
 
-.fb-auth{
+.alert, .message{
+  z-index: 999;
+  width: 250px;
   position: fixed;
-  top: 10px;
-  right: 0;
-  margin-right: 0px;
-  background-color: rgba(244, 137, 11, .5);
-  font-size: 0;
+  left: 50%;
+  top: 50%;
+  margin-left: -160px;
+  margin-top: -38px;
+  background: #fff6bf image-url('exclamation.png') 15px center no-repeat;
+  text-align: left;
+  padding: 10px 20px 10px 50px;
+  border-top: 2px solid #ffd324;
+  border-bottom: 2px solid #ffd324;
+
+  a{
+    line-height: 24px;
+    text-align: center;
+    display: inline-block;
+    width: 32px;
+    height: 24px;
+    background-color: #ff7f32;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 80%;
+    border-radius: 10px;
+  }
+  a:hover{
+    color: #f9f8f3;
+    background-color: #ff6609;
+  }
 }
-.fb-auth a{
-  font-size: 14px;
-  display: block;
-  padding: 10px;
-  margin: 10px;
-  text-decoration: none;
-  background-color: rgba(208, 124, 24, .8);
-  border: #d07c18 solid 2px;
-  box-shadow: #000 5px 5px 4px;
-  color: #fff;
+
+.float-button{
+  position: fixed;
+  z-index: 500;
+  width: 100%;
+  max-width: 940px;
+  left: 50%;
+  margin-left: -470px;
+
+  .fb-auth{
+    position: absolute;
+    top: 6px;
+    right: 0;
+    margin-right: 0px;
+    background-color: rgba(244, 137, 11, .5);
+    font-size: 0;
+    opacity: 0.3;
+    transition: 0.3s;
+
+    a{
+    text-align: center;
+    font-size: 14px;
+    width: 94px;
+    display: block;
+    padding: 6px;
+    margin: 10px;
+    text-decoration: none;
+    background-color: rgba(208, 124, 24, .8);
+    border: #d07c18 solid 2px;
+    box-shadow: #000 5px 5px 4px;
+    color: #fff;
+    }
+  }
+  .fb-auth:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+  .float{
+    width: 130px;
+    height: 50px;
+    background-color: rgba(255, 127, 50, .8);
+    line-height: 50px;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 6px;
+    opacity: 0.3;
+    transition: 0.3s;
+
+    a{
+      text-decoration: none;
+      text-align: center;
+      font-size: 20px;
+      color: #000;
+    }
+  }
+
+  .float_order{
+    top: 56px;
+  }
+
+  .float:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+  }
 }
