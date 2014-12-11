@@ -10,6 +10,14 @@
     margin: auto;
     font-size: 24px;
 
+    nav{
+      font-size: 10px;
+      margin: -16px 0 20px 0;
+    }
+    ul li p{
+      font-size: 16px;
+    }
+
     table{
       font-size: 18px;
       margin: -20px auto 0 auto;
@@ -29,6 +37,36 @@
       td{
         border-bottom: 1px solid #000;
       }
+    }
+    label{
+      font-size: 16px;
+    }
+    #order_address{
+      width: 240px;
+    }
+    .checkout{
+      display: inline-block;
+      padding: 4px 8px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-weight: normal;
+      line-height: 1.428571429;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background-color: #a6e22d;
+      border-color: #a6d213;
+      font-size: 16px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .checkout:hover{
+      color: #f9f8f3;
+      background-color: #a6c904;
+      border-color: #81b500;
     }
   }
 }

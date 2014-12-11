@@ -1,32 +1,40 @@
-<table width="300px">
-  <tr>
-    <th>產品名稱</th>
-    <th>單價</th>
-    <th>數量</th>
-    <th>總價</th>
-  </tr>
+<div class="milk">
+  <div class="wrapper">
+    <div class="orders">
+      <table>
+        <tr>
+          <th>產品名稱</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
+        </tr>
 
-  <% @cart.cart_items.each do |i| %>
-    <tr>
-      <td><%= i.product.name %></td>
-      <td><%= i.product.price %></td>
-      <td><%= i.qty %></td>
-      <td><%= i.product.price*i.qty %></td>
-    </tr>
-  <% end %>
+        <% @cart.cart_items.each do |i| %>
+          <tr>
+            <td><%= i.product.name %></td>
+            <td><%= i.product.price %></td>
+            <td><%= i.qty %></td>
+            <td><%= i.product.price*i.qty %></td>
+          </tr>
+        <% end %>
 
-  <tr>
-    <td></td>
-    <td></td>
-    <td>結帳金額：</td>
-    <td><%= @cart.amount %></td>
-  </tr>
-</table>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>結帳金額：</td>
+          <td><%= @cart.amount %></td>
+        </tr>
+      </table>
 
-<%= form_for @order, url: store_orders_path(cart_id: @cart.id) do |f| %>
+      <%= form_for @order, url: store_orders_path(cart_id: @cart.id) do |f| %>
 
-  <%= f.label :address, '收貨地址' %>
-  <%= f.text_field :address %>
-  <%= f.submit '送出訂單'%>
+        <%= f.label :address, '收貨地址：' %>
+        <%= f.text_field :address %>
+        <br>
+        <%= f.submit '送出訂單', class: 'checkout'%>
 
-<% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
