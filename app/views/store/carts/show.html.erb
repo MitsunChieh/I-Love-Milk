@@ -1,28 +1,33 @@
-<table width="300px">
-  <tr>
-    <th>產品名稱</th>
-    <th>單價</th>
-    <th>數量</th>
-    <th>總價</th>
-  </tr>
+<div class="milk">
+  <div class="wrapper">
+    <div class="cart">
+    <h2>購物車</h2>
+    <table>
+      <tr>
+        <th>產品名稱</th>
+        <th>單價</th>
+        <th>數量</th>
+        <th>總價</th>
+      </tr>
 
-  <% @cart.cart_items.each do |i| %>
-    <tr id="product_<%= i.product_id %>">
-      <td><%= i.product.name %></td>
-      <td><%= i.product.price %></td>
-      <td><%= i.qty %></td>
-      <td><%= i.product.price*i.qty %></td>
-      <td><%= link_to '刪除', store_cart_path(p_id: i.product_id), method: :delete, remote: :true %></td>
-    </tr>
-  <% end %>
+      <% @cart.cart_items.each do |i| %>
+        <tr id="product_<%= i.product_id %>">
+          <td><%= i.product.name %></td>
+          <td><%= i.product.price %></td>
+          <td><%= i.qty %></td>
+          <td><%= i.product.price*i.qty %></td>
+          <td><%= link_to '刪除', store_cart_path(p_id: i.product_id), method: :delete, remote: :true, class: 'del del_'+i.product_id.to_s %></td>
+        </tr>
+      <% end %>
 
-  <tr>
-    <td></td>
-    <td></td>
-    <td>結帳金額：</td>
-    <td id="cart-amount"><%= @cart.amount %></td>
-  </tr>
-</table>
-
-<%= link_to '結帳', new_store_order_path(cart_id: @cart.id) %>
-<%= link_to '回商品列表', store_path %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>結帳金額：</td>
+        <td id="cart-amount"><%= @cart.amount %></td>
+        <td><%= link_to '結帳', new_store_order_path(cart_id: @cart.id), class: 'checkout' %></td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>
