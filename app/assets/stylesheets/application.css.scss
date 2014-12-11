@@ -16,7 +16,7 @@
  *= require welcome
  *= require store
  *= require products
- *= require cart
+ *= require store/carts
  */
 
 .alert, .message{
@@ -94,8 +94,8 @@
     line-height: 50px;
     position: absolute;
     z-index: 999;
-    left: 0;
-    top: 6px;
+    right: 0;
+    top: 56px;
     opacity: 0.3;
     transition: 0.3s;
 
@@ -108,7 +108,11 @@
   }
 
   .float_order{
-    top: 56px;
+    top: 106px;
+  }
+
+  .float_store{
+    top: 156px;
   }
 
   .float:hover{
