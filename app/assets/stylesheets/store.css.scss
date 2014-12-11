@@ -7,11 +7,13 @@
 
     h2{
       margin-bottom: 10px;
+      color: #40da4e;
+      margin-top: 40px;
     }
 
     .product{
       font-size: 14px;
-      background-color: #ddd;
+      background-color: #d08888;
       display: block;
       width: 273px;
       height: 250px;
@@ -66,6 +68,9 @@
         font-size: 16px;
       }
       font-size: 16px;
+    }
+    .clearFix{
+      margin-bottom: 20px;
     }
   }
 }
