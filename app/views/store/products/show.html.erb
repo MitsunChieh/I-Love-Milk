@@ -1,12 +1,18 @@
-<%= render 'common/float_cart' %>
-
-<p>
-<%= @product.name %>
-價格：<%= @product.price %>
-剩餘數量：<%= @product.qty %>
-</p>
-
-<%= render 'common/cart_update', p: @product %>
-
-<%= link_to '回商品列表', store_path %>
-<%= link_to '前往購物車', store_cart_path %>
+<div class="milk">
+  <div class="wrapper">
+    <div class="product-detail">
+      <div class="product product_<%= @product.id %>">
+        <p class="name"><%= @product.name %></p>
+        <%= image_tag @product.logo_url.url(:thumb) %>
+        <p>價格：<%= @product.price %></p>
+        <p>剩餘數量：<%= @product.qty %></p>
+        <%= render 'common/cart_update', p: @product %>
+      </div>
+      <div class="product">
+        <p class="name">商品描述</p>
+        <p><%= @product.description %></p>
+      </div>
+      <div class="clearFix"></div>
+    </div>
+  </div>
+</div>
