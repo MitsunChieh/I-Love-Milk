@@ -1,5 +1,5 @@
 class OrderMailer < ActionMailer::Base
-  default from: "ilovemilk@gmail.com"
+  default from: "aga@ilovemilk.com.tw"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
