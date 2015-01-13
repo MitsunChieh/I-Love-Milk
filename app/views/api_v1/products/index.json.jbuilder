@@ -2,7 +2,7 @@ json.data do
   json.partial! "product", collection: @products, as: :p
 
   json.array!(@products) do |p|
-    json.url v1_product_url(p)
+    json.url store_product_url(p)
     json.name p.name
     json.description p.description
     json.qty p.qty
