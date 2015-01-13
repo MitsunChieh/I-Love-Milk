@@ -23,6 +23,13 @@ module GrapeApi
         def v1_products_url(x)
           "/api/v1/products?page=#{x.values[0]}"
         end
+      def v1_products_url(page)
+        "/api/v1/grape/products?page=#{page.values[0]}"
+      end
+
+      def store_product_url(product)
+        "/store/products/#{product.id}"
+      end
     end
 
     resource :grape do
@@ -32,6 +39,7 @@ module GrapeApi
         {
           data:
           [
+            url: store_product_url(@products[0]),
             name: @products[0].name,
             description: @products[0].description,
             qty: @products[0].qty,
