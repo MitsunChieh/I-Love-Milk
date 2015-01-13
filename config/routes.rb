@@ -36,7 +36,8 @@ Rails.application.routes.draw do
   # end
 
   scope :path => '/api/v1/', :module => "api_v1",
-                             :defaults => { :format => :json }, :as => 'v1' do
+                             :defaults => { :format => :json },
+                             :as => 'v1' do
     post "login" => "auth#login"
     post "logout" => "auth#logout"
 
